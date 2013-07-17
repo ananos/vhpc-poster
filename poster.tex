@@ -1,5 +1,5 @@
 %\documentclass[portrait,final,a0paper]{baposter}
-\documentclass[a4shrink,portrait,final]{baposter}
+\documentclass[a1paper,portrait,final,fontscale=0.5]{baposter}
 % Usa a4shrink for an a4 sized paper.
 
 \tracingstats=2
@@ -114,10 +114,10 @@
 %  bgColorOne=white,
 %  bgColorOne=darksalmon,
   bgColorOne=white,
-  borderColor=coral,
+  borderColor=blue,
   %headerColorOne=salmon5,
   headerColorOne=white,
-  %headerColorTwo=lightercoral,
+  headerColorTwo=blue,
   %headerFontColor=lightcoral,
   %boxColorOne=lightercoral,
   boxColorOne=white,
@@ -128,22 +128,22 @@
   % Format of text header
   eyecatcher=no,
   headerborder=open,
-  headerheight=0.08\textheight,
-  headershape=roundedright,
-  headershade=plain,
+  headerheight=0.12\textheight,
+  headershape=rounded,
+  headershade=shade-tb,
   headerfont=\Large\textsf, %Sans Serif
   boxshade=plain,
 %  background=shade-tb,
   background=plain,
-  linewidth=1pt
+  linewidth=2pt
   }
   % Eye Catcher
   {\includegraphics[width=10em]{D1077}} % No eye catcher for this poster. (eyecatcher=no above). If an eye catcher is present, the title is centered between eye-catcher and logo.
   % Title
   {\sf %Sans Serif
-  %\bf% Serif
+  \bf% Serif
   \vspace{2em}
-  8th Workshop on Virtualization in High-Performance Cloud Computing}
+  \begin{center} 8th Workshop on Virtualization in High-Performance \\Cloud Computing (VHPC'13)\end{center}}
   % Authors
   {\sf %Sans Serif
   }
@@ -230,24 +230,11 @@ Topics of interest include, but are not limited to:
 \item Cluster provisioning in the cloud
 \end{itemize}
   }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{}{name=questions,row=0,column=1.5,span=1.5}{
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure}
-%\centering
-%\includegraphics[width=\linewidth]{logo_acm_icps.png}
-%\includegraphics[width=\linewidth]{sc13_logo.png}
-%\includegraphics[width=.2\linewidth]{ntua_logo.pdf}
-%\includegraphics[width=\linewidth]{cslab_logo.pdf}
-\begin{center}
-\includegraphics[width=.58\linewidth]{logos.png}
-\end{center}
- % \vspace{0.5em}
-  }
-
+  
+  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Important dates}{name=motivation,column=1.5,span=3, below=questions}{
+  \headerbox{Important dates}{name=motivation,column=0,span=1.5, below=contribution}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Rolling abstract submission
@@ -260,6 +247,21 @@ Rolling abstract submission
 \item Workshop date: \textbf{Nov. 22nd}, 2013
 \end{itemize}
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{}{name=questions,row=0,column=1.5,span=1.5}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}
+%\centering
+%\includegraphics[width=\linewidth]{logo_acm_icps.png}
+%\includegraphics[width=\linewidth]{sc13_logo.png}
+%\includegraphics[width=.2\linewidth]{ntua_logo.pdf}
+%\includegraphics[width=\linewidth]{cslab_logo.pdf}
+\begin{center}
+\includegraphics[width=.58\linewidth]{logos.png}
+\end{center}
+  \vspace{4.5em}
+  }
+
 
 \end{poster}
 
