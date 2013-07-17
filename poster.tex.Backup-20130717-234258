@@ -1,0 +1,266 @@
+%\documentclass[portrait,final,a0paper]{baposter}
+\documentclass[a4shrink,portrait,final]{baposter}
+% Usa a4shrink for an a4 sized paper.
+
+\tracingstats=2
+
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{bm}
+
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\usepackage{pgfbaselayers}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\usepackage{times}
+\usepackage{helvet}
+%\usepackage{bookman}
+\usepackage{palatino}
+
+\newcommand{\captionfont}{\footnotesize}
+
+\selectcolormodel{cmyk}
+
+\graphicspath{{images/}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Some math symbols used in the text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format
+\newcommand{\Matrix}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newcommand{\Vector}[1]{\Matrix{#1}}
+\newcommand*{\SET}[1]  {\ensuremath{\mathcal{#1}}}
+\newcommand*{\MAT}[1]  {\ensuremath{\mathbf{#1}}}
+\newcommand*{\VEC}[1]  {\ensuremath{\bm{#1}}}
+\newcommand*{\CONST}[1]{\ensuremath{\mathit{#1}}}
+\newcommand*{\norm}[1]{\mathopen\| #1 \mathclose\|}% use instead of $\|x\|$
+\newcommand*{\abs}[1]{\mathopen| #1 \mathclose|}% use instead of $\|x\|$
+\newcommand*{\absLR}[1]{\left| #1 \right|}% use instead of $\|x\|$
+
+\def\norm#1{\mathopen\| #1 \mathclose\|}% use instead of $\|x\|$
+\newcommand{\normLR}[1]{\left\| #1 \right\|}% use instead of $\|x\|$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Multicol Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\columnsep}{0.7em}
+\setlength{\columnseprule}{0mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Save space in lists. Use this after the opening of the list
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\compresslist}{%
+\setlength{\itemsep}{1pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\parsep}{0pt}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Begin of Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Here starts the poster
+%%%---------------------------------------------------------------------------
+%%% Format it to your taste with the options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define some colors
+\definecolor{silver}{cmyk}{0,0,0,0.3}
+%\definecolor{coral}{cmyk}{0,0.5,0.69,0.0}
+\definecolor{coral}{cmyk}{0,0.58,0.69,0.0}
+\definecolor{lightcoral}{cmyk}{0,0.48,0.59,0.0}
+\definecolor{black}{cmyk}{0,0,0.0,1.0}
+\definecolor{darkYellow}{cmyk}{0,0,1.0,0.5}
+\definecolor{darkSilver}{cmyk}{0,0,0,0.1}
+\definecolor{darksalmon}{cmyk}{0,0.36,0.48,0.09}
+\definecolor{salmon5}{cmyk}{0,0.41,0.41,0.56}
+
+\definecolor{lightercoral}{cmyk}{0,0.25,0.25,0}
+%\definecolor{lightercoral}{cmyk}{0,0.40,0.47,0.08}
+\definecolor{apricot}{cmyk}{0.0,0.36,0.57,0.02}
+\definecolor{lightestapricot}{cmyk}{0,0,0.05,0.0}
+
+%%
+\typeout{Poster Starts}
+\background{
+  \begin{tikzpicture}[remember picture,overlay]%
+    %\draw (current page.north west)+(-2em,2em) node[anchor=north west] {\includegraphics[height=1.1\textheight]{silhouettes_background}};
+
+  \end{tikzpicture}%
+}
+
+\newlength{\leftimgwidth}
+\begin{poster}%
+  % Poster Options
+  {
+  % Show grid to help with alignment
+  grid=no,
+  % Column spacing
+  colspacing=1em,
+  % Color style
+%  bgColorOne=white,
+%  bgColorOne=darksalmon,
+  bgColorOne=white,
+  borderColor=coral,
+  %headerColorOne=salmon5,
+  headerColorOne=white,
+  %headerColorTwo=lightercoral,
+  %headerFontColor=lightcoral,
+  %boxColorOne=lightercoral,
+  boxColorOne=white,
+  boxColorTwo=lightercoral,
+  % Format of textbox
+  textborder=roundedleft,
+%  textborder=rectangle,
+  % Format of text header
+  eyecatcher=no,
+  headerborder=open,
+  headerheight=0.08\textheight,
+  headershape=roundedright,
+  headershade=plain,
+  headerfont=\Large\textsf, %Sans Serif
+  boxshade=plain,
+%  background=shade-tb,
+  background=plain,
+  linewidth=1pt
+  }
+  % Eye Catcher
+  {\includegraphics[width=10em]{D1077}} % No eye catcher for this poster. (eyecatcher=no above). If an eye catcher is present, the title is centered between eye-catcher and logo.
+  % Title
+  {\sf %Sans Serif
+  %\bf% Serif
+  \vspace{2em}
+  8th Workshop on Virtualization in High-Performance Cloud Computing}
+  % Authors
+  {\sf %Sans Serif
+  }
+  % University logo
+  {% The makebox allows the title to flow into the logo, this is a hack because of the L shaped logo.
+    \makebox[8em][r]{%
+      \begin{minipage}{16em}
+        \hfill
+      %  \includegraphics[height=2em]{cslab_logo.pdf}
+      %  \includegraphics[height=7.0em]{ntua_logo.pdf}
+      \end{minipage}
+    }
+  }
+
+  \tikzstyle{light shaded}=[top color=baposterBGtwo!30!white,bottom color=baposterBGone!30!white,shading=axis,shading angle=30]
+
+  % Width of left inset image
+     \setlength{\leftimgwidth}{0.78em+8.0em}
+
+    % A coloured circle useful as a bullet with an adjustably strong filling
+    \newcommand{\colouredcircle}[1]{%
+      \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em); \draw[draw=black,fill=baposterBGone!80!black!#1!white,line width=0.03em] (0,0) circle(0.18em);}}
+
+  \headerbox{Topics of Interest}{name=contribution,column=0,span=1.5}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Virtualization has become a common abstraction layer in modern
+%data centers, enabling resource owners to manage complex
+%infrastructure independently of their applications. Conjointly,
+%virtualization is becoming a driving technology for a manifold of
+%industry grade IT services. The cloud concept includes the notion
+%of a separation between resource owners and users, adding services
+%such as hosted application frameworks and queueing. Utilizing the
+%same infrastructure, clouds carry significant potential for use in
+%high-performance scientific computing. The ability of clouds to provide
+%for requests and releases of vast computing resources dynamically and
+%close to the marginal cost of providing the services is unprecedented in
+%the history of scientific and commercial computing.
+%
+%This workshop aims to bring together industrial providers with the
+%scientific community in order to foster discussion, collaboration
+%and mutual exchange of knowledge and experience.
+%
+%The workshop will be one day in length, composed of 20 min
+%paper presentations, each followed by 10 min discussion sections.
+%Lightning talks are limited to 5 minutes. Presentations may be
+%accompanied by interactive demonstrations.
+%
+Topics of interest include, but are not limited to:
+
+\begin{itemize}
+\item Management, deployment and monitoring of VM-based environments
+\item VM-cloud performance monitoring
+\item VM cloud topology management and optimization
+\item Operating systems virtualization supportpptimization
+\item VM-based cloud performance modelling
+\item Network virtualization for VM-environments
+\item Data virtualization
+\item Cloudbursting
+\item Evolved grid architectures including such based on network virtualization
+\item Workload characterization for VM-based environments
+\item Optimized communication libraries/protocols in the cloud
+\item System and process/bytecode VM convergence
+\item Cloud frameworks and APIs
+\item GPU Virtualization architectures and APIs
+\item Checkpointing/migration of large compute jobs
+\item Instrumentation interfaces and languages
+\item VMM performance (auto-)tuning on various load types
+\item Cloud reliability, fault-tolerance, and security
+\item Heterogeneous virtualized environments
+\item Paravirtualized I/O
+\item Services in cloud HPC
+\item Research and education use cases
+\item Virtualization in cloud, cluster and grid environments
+\item Cross-layer VM optimizations
+\item Cloud HPC use cases including optimizations
+\item Energy-aware virtualization
+\item Performance and cost modelling
+\item QoS and and service levels
+\item Languages for describing highly-distributed compute jobs
+\item VM cloud and cluster distribution algorithms, load balancing
+\item Instrumentation interfaces and languages
+\item Hypervisor extensions and tools for cluster and grid computing
+\item Virtual machine monitor platforms
+\item Cluster provisioning in the cloud
+\end{itemize}
+  }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{}{name=questions,row=0,column=1.5,span=1.5}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}
+%\centering
+%\includegraphics[width=\linewidth]{logo_acm_icps.png}
+%\includegraphics[width=\linewidth]{sc13_logo.png}
+%\includegraphics[width=.2\linewidth]{ntua_logo.pdf}
+%\includegraphics[width=\linewidth]{cslab_logo.pdf}
+\begin{center}
+\includegraphics[width=.58\linewidth]{logos.png}
+\end{center}
+ % \vspace{0.5em}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Important dates}{name=motivation,column=1.5,span=3, below=questions}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Rolling abstract submission
+\begin{itemize}
+\item Full paper submission: \textbf{Sept. 23rd}, 2013
+\item Acceptance notification: \textbf{Oct. 21st}, 2013
+\item Camera-ready version due: \textbf{Nov. 8th}, 2013
+\item Lightning talk abstracts: \textbf{Aug. 9th}, 2013
+\item Lightning talk notification: \textbf{Sep. 22nd}, 2013
+\item Workshop date: \textbf{Nov. 22nd}, 2013
+\end{itemize}
+}
+
+\end{poster}
+
+\end{document}
