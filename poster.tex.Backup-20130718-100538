@@ -248,7 +248,7 @@ Rolling abstract submission
 \end{itemize}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{}{name=questions,row=0,column=1.5,span=}{
+  \headerbox{}{name=questions,row=0,column=1.5,span=1.5}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{figure}
 %\centering
@@ -257,7 +257,7 @@ Rolling abstract submission
 %\includegraphics[width=.2\linewidth]{ntua_logo.pdf}
 %\includegraphics[width=\linewidth]{cslab_logo.pdf}
 \begin{center}
-\includegraphics[width=.58\linewidth]{logos.pdf}
+\includegraphics[width=.58\linewidth]{logos.png}
 \end{center}
   \vspace{4.5em}
   }
